@@ -1,22 +1,26 @@
 {
-    "layer": "bottom",
-    "position": "bottom",
-    "margin-bottom": 10,
-    "margin-top": 10,
-    "width": 1000,
+    "layer": "top",
+    "position": "top",
+    // "margin-bottom": 10,
+    // "margin-top": 10,
+    // "margin-left": 10,
+    // "margin-right": 10,
     "modules-left": [
-        "sway/workspaces"
-        // "sway/mode"
+        "sway/workspaces",
+        "sway/mode"
     ],
     "modules-center": [
+        "wlr/taskbar",
         "clock",
         "temperature"
         // "sway/window"
     ],
     "modules-right": [
-        "network",
-        "pulseaudio",
+        "group/volume",
+        "backlight",
         "battery",
+        "network",
+        "bluetooth",
         "tray"
     ],
     // "sway/window": {
@@ -42,7 +46,14 @@
         ]
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "󰥔  {:%a, %d. %b  %I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+          "format": {
+            "today": "<span color='#75f1fa'><b>{}</b></span>"
+          }
+        },
+
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -69,10 +80,15 @@
             "Easy Effects Sink"
         ]
     },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
     "network": {
         "interface": "wlp1s0",
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -82,7 +98,7 @@
         "max-length": 50
     },
     "sway/workspaces": {
-        "format": "{name}:- {icon}",
+        "format": "{name}.   {icon}",
         "format-icons": {
           "1": "",
           "2": "",
@@ -101,11 +117,54 @@
         "format": "{temperatureC}°C "
     },
     "tray": {
-    "icon-size": 21,
-    "spacing": 10,
-    "icons": {
-        "blueman": "bluetooth",
-        "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+            "blueman": "bluetooth",
+            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+            }
+    },
+    "group/volume": {
+        "orientation": "horizontal",
+        "modules": [
+          "pulseaudio",
+          "pulseaudio/slider"
+        ]
+        
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}%  {icon}",
+        "format-icons": ["", ""]
+    },
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": "  {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}.  ",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+          "Alacritty"
+        ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal",
+            ".*(steam_app_[0-9]+).*": "Game"
+
         }
-    }
+    },
+
 }

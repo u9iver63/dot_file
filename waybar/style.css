@@ -1,3 +1,10 @@
+/* @define-color highlight rgba(177,241,250,1); */
+/* @dffine-color dark-9 rgba(24,24,27,1); */
+/* @define-color dark-8 rgba(39,39,42,); */
+/* @define-color dark-7 rgba(63,63,70,1); */
+/* @define-color dark-6 rgba(82,82,91,1); */
+/* @define-color dark-5 rgba(113,113,122,1); */
+/**/
 * {
     border: none;
     border-radius: 0;
@@ -13,7 +20,7 @@
 }
 
 window#waybar {
-    background: transparent;
+    background-color: rgba(24,24,27,1);
     color: white;
 }
 
@@ -31,12 +38,11 @@ tooltip label {
 }
 
 #workspaces button {
-    transition: all 250ms ease-in-out;
-    padding: 0 8px;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.4);
-    /* border: 1px solid black; */
-    border-radius: 0;
+    padding: 0px 5px;
+    margin: 7px 0px 7px 7px;
+    background: rgba(24,24,27,1);
+    border-radius: 2px;
+    color: white;
 
 }
 
@@ -46,12 +52,16 @@ tooltip label {
 
 #workspaces button.focused {
     transition: all 250ms ease-in-out;
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    min-width: 40px;
-    border-radius: 100px;
+    background: rgba(177,241,250,1);
+    color: black;
+    /* min-width: 40px; */
+    border-radius: 2;
 
     /* border-bottom: 3px solid white; */
+}
+
+#workspaces button.urgent {
+  background: rgba(227, 81, 73, 1);
 }
 
 #mode,
@@ -65,23 +75,26 @@ tooltip label {
     border-bottom: 3px solid white;
 }
 
-#clock {
-    background-color: #000000;
-    border-radius: 6px;
-    margin: 0 4px;
-}
 
-#battery {
-    background-color: #1a5c2a;
-    color: black;
-    padding: 10px 5px;
-    margin: 0 10px;
-    border-radius: 5px;
+#battery,
+#clock,
+#temperature,
+#network,
+#backlight,
+#tray,
+#pulseaudio,
+#bluetooth,
+#taskbar,
+#volume {
+    background-color: rgba(39,39,42,0.5);
+    padding: 0px 8px;
+    margin: 5px 10px 5px 0px;
+    border-radius: 2px;
 }
 
 #battery.charging, #battery.plugged {
     color: white;
-    background-color: green;
+    /* background-color: green; */
 }
 
 
@@ -102,65 +115,32 @@ tooltip label {
     animation-direction: alternate;
 }
 
-#pulseaudio {
-    background-color: #3d1f60;
-    color: black;
-    padding: 0 5px;
-    margin: 0 5px;
+
+
+
+#pulseaudio-slider {
+  padding: 0px;
+  margin: 0px;
+  margin: 8px;
+}
+#pulseaudio-slider slider {
+    all: unset;
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 75px;
     border-radius: 5px;
+    background: rgba(63,63,70,1);
 }
-
-#pulseaudio {
-    background-color: #3d1f60;
-}
-
-#network {
-    background-color: #b7d8aa;
-    color: #a8f0e4;
-    padding: 0 5px;
-    margin: 0 5px;
+#pulseaudio-slider highlight {
+    min-width: 10px;
     border-radius: 5px;
-}
-
-#network {
-    background-color: #0a4a42;
-}
-
-#temperature {
-    color: #ffd5c4;
-    padding: 0 5px;
-    margin: 0 5px;
-    border-radius: 5px;
-}
-
-#temperature {
-    background-color: #7a2200;
-}
-
-#backlight {
-    background-color: #b7d8aa;
-    color: black;
-    padding: 0 5px;
-    margin: 0 5px;
-    border-radius: 5px;
-}
-
-#backlight {
-    background-color: #ff4800;
-}
-
-/* shared pill style for right-side modules */ 
-#network,
-#pulseaudio,
-#battery,
-#temperature,
-#clock,
-#backlight {
-    padding: 0px 8px;
-    margin: 4px 3px;
-    min-height: 30px;
-    color: white;
-    border-radius: 20;
-    opacity: 0.8;
+    background: rgba(177,241,250,1);
 
 }
