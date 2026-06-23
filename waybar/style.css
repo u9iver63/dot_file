@@ -1,0 +1,166 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+
+    font-family: "DroidSansM Nerd Font Regular";
+    font-size: 13px;
+
+    /* manditory */
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+tooltip {
+    background: rgba(43, 48, 59, 0.5);
+    border: 1px solid rgba(100, 114, 125, 0.5);
+}
+
+tooltip label {
+    color: white;
+}
+
+#workspaces {
+    transition: all 250ms ease-in-out;
+}
+
+#workspaces button {
+    transition: all 250ms ease-in-out;
+    padding: 0 8px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    /* border: 1px solid black; */
+    border-radius: 0;
+
+}
+
+/* #workspaces button.active {
+    min-width: 50px;
+} */
+
+#workspaces button.focused {
+    transition: all 250ms ease-in-out;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    min-width: 40px;
+    border-radius: 100px;
+
+    /* border-bottom: 3px solid white; */
+}
+
+#mode,
+#clock,
+#battery {
+    padding: 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    background-color: #000000;
+    border-radius: 6px;
+    margin: 0 4px;
+}
+
+#battery {
+    background-color: #1a5c2a;
+    color: black;
+    padding: 10px 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+#battery.charging, #battery.plugged {
+    color: white;
+    background-color: green;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio {
+    background-color: #3d1f60;
+    color: black;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+#pulseaudio {
+    background-color: #3d1f60;
+}
+
+#network {
+    background-color: #b7d8aa;
+    color: #a8f0e4;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+#network {
+    background-color: #0a4a42;
+}
+
+#temperature {
+    color: #ffd5c4;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+#temperature {
+    background-color: #7a2200;
+}
+
+#backlight {
+    background-color: #b7d8aa;
+    color: black;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+#backlight {
+    background-color: #ff4800;
+}
+
+/* shared pill style for right-side modules */ 
+#network,
+#pulseaudio,
+#battery,
+#temperature,
+#clock,
+#backlight {
+    padding: 0px 8px;
+    margin: 4px 3px;
+    min-height: 30px;
+    color: white;
+    border-radius: 20;
+    opacity: 0.8;
+
+}
