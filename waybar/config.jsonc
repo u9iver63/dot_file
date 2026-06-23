@@ -10,7 +10,7 @@
         "sway/mode"
     ],
     "modules-center": [
-        "wlr/taskbar",
+        // "wlr/taskbar",
         "clock",
         "temperature"
         // "sway/window"
@@ -88,7 +88,7 @@
     "network": {
         "interface": "wlp1s0",
         "format": "{ifname}",
-        "format-wifi": "",
+        "format-wifi": " ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
