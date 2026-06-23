@@ -1,0 +1,8 @@
+# 1. Ignore everything in the entire project
+/*
+# 2. Allow the .gitirnore file itself so your rules are save !.gitignore 
+!.gitignore 
+
+#. 3 Allow a speicic folder
+!.waybar/
+!.waybar/**
