@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     // "margin-bottom": 10,
     // "margin-top": 10,
@@ -7,20 +7,28 @@
     // "margin-right": 10,
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
+        "sway/mode",
+        "sway/scratchpad",
     ],
     "modules-center": [
         // "wlr/taskbar",
         "clock",
+        "custom/separator",
         "temperature"
         // "sway/window"
     ],
     "modules-right": [
-        "group/volume",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
         "backlight",
+        "custom/separator",
         "battery",
+        "custom/separator",
         "network",
+        "custom/separator",
         "bluetooth",
+        "custom/separator",
         "tray"
     ],
     // "sway/window": {
@@ -56,8 +64,8 @@
 
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "<span color='#75f1fa'>VOL</span>  {volume}%",
+        // "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
@@ -80,11 +88,11 @@
             "Easy Effects Sink"
         ]
     },
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal"
-    },
+    // "pulseaudio/slider": {
+    //     "min": 0,
+    //     "max": 100,
+    //     "orientation": "horizontal"
+    // },
     "network": {
         "interface": "wlp1s0",
         "format": "{ifname}",
@@ -99,6 +107,7 @@
     },
     "sway/workspaces": {
         "format": "{name}.   {icon}",
+        "all-outputs": true,
         "format-icons": {
           "1": "",
           "2": "",
@@ -117,24 +126,24 @@
         "format": "{temperatureC}°C "
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 10,
         "spacing": 10,
         "icons": {
             "blueman": "bluetooth",
             "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
             }
     },
-    "group/volume": {
-        "orientation": "horizontal",
-        "modules": [
-          "pulseaudio",
-          "pulseaudio/slider"
-        ]
-        
-    },
+    // "group/volume": {
+    //     "orientation": "horizontal",
+    //     "modules": [
+    //       "pulseaudio",
+    //       "pulseaudio/slider"
+    //     ]
+    //
+    // },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}%  {icon}",
+        "format": "{percent}%   {icon}",
         "format-icons": ["", ""]
     },
     "bluetooth": {
@@ -166,5 +175,18 @@
 
         }
     },
-
+    "custom/separator": {
+      "format": "|",
+      "tooltip": false
+    },
+    "sway/scratchpad":{
+      "format": "{icon} {count}",
+      "show-empty": false,
+      "format-icons": ["",""],
+      "tooltip": true,
+      "tooltip-format": "{app}:{title}"
+    },
+    "sway/mode": {
+      "format": "<span style=\"italic\">{}</span>"
+    }
 }
