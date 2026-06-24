@@ -64,7 +64,7 @@
 
     },
     "pulseaudio": {
-        "format": "<span color='#75f1fa'>VOL</span>  {volume}%",
+        "format": "<span color='#75f1fa'>VOL</span> {volume}%",
         // "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
@@ -106,8 +106,7 @@
         "max-length": 50
     },
     "sway/workspaces": {
-        "format": "{name}.   {icon}",
-        "all-outputs": true,
+        "format": "{name}. {icon}",
         "format-icons": {
           "1": "",
           "2": "",
@@ -126,10 +125,10 @@
         "format": "{temperatureC}°C "
     },
     "tray": {
-        "icon-size": 10,
+        "icon-size": 14,
         "spacing": 10,
         "icons": {
-            "blueman": "bluetooth",
+            "blueman": "<span color='#75f1fa'>VOL</span> bluetooth",
             "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
             }
     },
@@ -143,12 +142,12 @@
     // },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}%   {icon}",
+        "format": "{percent}% {icon}",
         "format-icons": ["", ""]
     },
     "bluetooth": {
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-        "format": "  {status}",
+        "format": "<span color='#75f1fa'>{status}</span> ",
         "format-disabled": "", // an empty format will hide the module
         "format-connected": " {num_connections} connected",
         "tooltip-format": "{controller_alias}\t{controller_address}",
