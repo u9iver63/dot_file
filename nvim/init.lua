@@ -31,6 +31,9 @@ vim.pack.add({
         name = "catppuccin"
    },
    "https://github.com/folke/snacks.nvim",
+   "https://github.com/neovim-treesitter/treesitter-parser-registry",
+   "https://github.com/jmbuhr/otter.nvim",
+   "https://github.com/quarto-dev/quarto-nvim"
 })
 
 local function packadd(name)
@@ -56,7 +59,9 @@ packadd("undotree")
 packadd("iron.nvim")
 packadd("lspsaga.nvim")
 packadd("snacks.nvim")
-
+packadd("treesitter-parser-registry")
+packadd("otter.nvim")
+packadd("quarto-nvim")
 
 require("options")
 require("keymaps")
@@ -66,6 +71,7 @@ require("typst")
 require("colors")
 require("undotree")
 require("init_lspsaga")
+require("quarto")
 -- ==============================================
 -- color scheme                                  
 -- ==============================================
