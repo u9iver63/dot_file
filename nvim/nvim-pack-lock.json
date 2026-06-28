@@ -72,6 +72,14 @@
       "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "otter.nvim": {
+      "rev": "d781eda3bc18dbc8677f9a24abdc705fb74e4428",
+      "src": "https://github.com/jmbuhr/otter.nvim"
+    },
+    "quarto-nvim": {
+      "rev": "17f1e5d664bc615478230dc0240666329efacf9b",
+      "src": "https://github.com/quarto-dev/quarto-nvim"
+    },
     "rose-pine": {
       "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
       "src": "https://github.com/rose-pine/neovim"
@@ -79,6 +87,10 @@
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "treesitter-parser-registry": {
+      "rev": "6eb15358bb9fc88f0d3401d8538d56652e9bdf3c",
+      "src": "https://github.com/neovim-treesitter/treesitter-parser-registry"
     },
     "typst-preview.nvim": {
       "rev": "87db18b8d19c8b0eed399f52e4c527ce5afe4817",
