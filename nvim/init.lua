@@ -33,7 +33,8 @@ vim.pack.add({
    "https://github.com/folke/snacks.nvim",
    "https://github.com/neovim-treesitter/treesitter-parser-registry",
    "https://github.com/jmbuhr/otter.nvim",
-   "https://github.com/quarto-dev/quarto-nvim"
+   "https://github.com/quarto-dev/quarto-nvim",
+   "https://github.com/L3MON4D3/LuaSnip"
 })
 
 local function packadd(name)
@@ -62,6 +63,15 @@ packadd("snacks.nvim")
 packadd("treesitter-parser-registry")
 packadd("otter.nvim")
 packadd("quarto-nvim")
+packadd("LuaSnip")
+
+
+
+
+
+
+
+
 
 require("options")
 require("keymaps")
@@ -71,7 +81,8 @@ require("typst")
 require("colors")
 require("undotree")
 require("init_lspsaga")
-require("quarto")
+require("config_quarto")
+require("config_snacks")
 -- ==============================================
 -- color scheme                                  
 -- ==============================================
