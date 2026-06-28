@@ -43,7 +43,7 @@ vim.opt.isfname:append("@-@")
 -- i-ci-ve: Vertical line (Insert, Command-insert, Visual-exclude)
 -- r-cr-o: Horizontal bar (Replace, Command-replace, Operator-pending)
 -- vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"   
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 vim.opt.cursorline = true -- turn off the highlight the line 
 
 -- this give the kind of padding for left side of column

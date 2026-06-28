@@ -82,8 +82,19 @@ require("colors")
 require("undotree")
 require("init_lspsaga")
 require("config_quarto")
-require("config_snacks")
+require("config_LauSnip")
+-- require("config_snacks")
 -- ==============================================
--- color scheme                                  
+-- snippets
+--   
 -- ==============================================
+
+
+-- Load all snippets from the nvim/LuaSnip directory at startup
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets/"})
+
+
+
+
+
 
